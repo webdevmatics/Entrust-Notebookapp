@@ -22,7 +22,7 @@
                     ☰
                 </button>
                 <div class="collapse navbar-toggleable-xs pull-xs-left" id="navbar-header">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{url('/')}}">
                         NoteBook App
                     </a>
                 </div>

@@ -27,9 +27,9 @@ class NotesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createNote($id)
     {
-        return view('notes.create');
+        return view('notes.create')->withId($id);
         
     }
 
@@ -41,9 +41,8 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
-        $user=Auth::user();
-        $note= $user->notebooks()->notes()->create($request->all());
-        return back();
+        Note::create($request->all());
+        return redirect()->route('notebooks.show',$request->notebook_id);
     }
 
     /**
@@ -79,9 +78,12 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user=Auth::user();
-        $note= $user->notebooks()->notes()->update($request->all());
-        return back();
+        $data= $request->except(['_method','_token']);
+        $note=Note::where('id',$id)->first();
+        $note->update($data);
+        return redirect()->route('notebooks.show',$note->notebook_id);
+        // return back();
+        // dd("hi");
     }
 
     /**
@@ -92,6 +94,9 @@ class NotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Note::destroy($id);
+        return back();
     }
+
+
 }

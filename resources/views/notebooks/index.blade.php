@@ -4,7 +4,7 @@
 	<div class="container text-center">
             <h1 class="pull-xs-left">Your Notebooks</h1>
             <div class="pull-xs-right">
-                <a class="btn btn-primary" href="#" role="button">New NoteBook +</a>
+                <a class="btn btn-primary" href="{{route('notebooks.create')}}" role="button">New NoteBook +</a>
             </div>
             <div class="clearfix"></div>
             <!-- notebook view -->

@@ -21,6 +21,7 @@ Route::group(['middleware'=>'auth'],function(){
     return view('notebookapp');
 	});
 	Route::resource('notebooks','NotebooksController');
+	Route::get('notebooks/{id}/createNote',['as'=>'createNote','uses'=>'NotesController@createNote']);
 	Route::resource('notes','NotesController');
 });
 Route::get('/home', 'HomeController@index');

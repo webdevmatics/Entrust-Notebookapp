@@ -44,7 +44,7 @@ class NotebooksController extends Controller
     {
         $user=Auth::user();
         $notebook= $user->notebooks()->create($request->all());
-        return back();
+        return redirect()->route('notebooks.index');
     }
 
     /**
@@ -58,7 +58,7 @@ class NotebooksController extends Controller
         
         $notebook=Notebook::where('id',$id)->first();
         $notes=$notebook->notes;
-        return view('notes.index',compact('notes'));
+        return view('notes.index',compact('notes','notebook'));
     }
 
     /**

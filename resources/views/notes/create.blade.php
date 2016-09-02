@@ -18,6 +18,7 @@
             </label>
             <input class="form-control" name="body" placeholder="Notes" type="textarea" rows="3">
         </div>
+        <input type="hidden" name="notebook_id" value="{{$id}}">
         <input type="submit" class="btn btn-primary" value="Done">
     </form>
 </div>
