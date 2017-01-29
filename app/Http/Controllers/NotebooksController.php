@@ -48,7 +48,7 @@ class NotebooksController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Displays notes related to the Notebook
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

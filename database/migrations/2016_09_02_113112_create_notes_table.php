@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateNotesTable extends Migration
 {
@@ -15,9 +15,12 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
-            // $table->integer('user_id');
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('notebook_id');
+
+
+            $table->integer('notebook_id')->unsigned();
+
+
+            $table->dropForeign(['notebook_id']);
             $table->foreign('notebook_id')->references('id')->on('notebooks')->onDelete('cascade');
             $table->string('title');
             $table->text('body');

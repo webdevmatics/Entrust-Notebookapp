@@ -19,10 +19,10 @@ body {
 	padding-top: 50px;
 }
 
-.notebook-title{
-	/*text-align: center;*/
+/*.notebook-title{
+	text-align: center;
 	padding: 10px 0 7px 15px;
-}
+}*/
 
 .navholder{
 	color: white;
@@ -34,4 +34,8 @@ body {
 .navholder:hover{
 	text-decoration: none;
 	color: white;
+}
+
+a>img{
+	    width: 238px;
 }
