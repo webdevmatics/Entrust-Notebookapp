@@ -12,6 +12,12 @@ use App\Notebook;
 
 class NotebooksController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('role:superuser')->only('create');
+        $this->middleware('role:superuser')->only('delete');
+    }
+    
     /**
      * Display a listing of the resource.
      *

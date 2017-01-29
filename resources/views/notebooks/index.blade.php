@@ -5,11 +5,14 @@
     <h1 class="pull-xs-left">
         Your Notebooks
     </h1>
+
+    @role('superuser')
     <div class="pull-xs-right">
         <a class="btn btn-primary" href="{{route('notebooks.create')}}" role="button">
             New NoteBook +
         </a>
     </div>
+    @endrole
     <div class="clearfix">
     </div>
     <!-- notebook view -->
