@@ -18,6 +18,11 @@
     		<input type="text" class="form-control" name="description" id="" placeholder="Description">
     	</div>
 
+		{{--<select name="id" id="" multiple>--}}
+			{{--<option value="1">men</option>--}}
+			{{--<option value="2">men2</option>--}}
+		{{--</select>--}}
+
         <div class="form-group text-left">
             <h3>Permissions</h3>
             @foreach($permissions as $permission)

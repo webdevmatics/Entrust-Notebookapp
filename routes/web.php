@@ -26,13 +26,16 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'NotesController@createNote']);
     Route::resource('notes', 'NotesController');
     Route::resource('role', 'RoleController');
+    Route::resource('user', 'UserController');
 
     Route::get('/admin', [
         'as' => 'admin.index',
+        'middleware'=>'role:admin',
         'uses' => function () {
             return view('admin.index');
         }
     ]);
+
 });
 Route::get('/home', 'HomeController@index');
 
